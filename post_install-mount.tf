@@ -6,6 +6,10 @@ resource "null_resource" "post_install" {
     user        = "root"
     private_key = var.private_key_content
     host        = huaweicloud_vpc_eip.ecs_eip.address
+    timeout     = "2m"
+    sleep_between = 10
+    retries     = 10
+     
   }
 
   provisioner "file" {
