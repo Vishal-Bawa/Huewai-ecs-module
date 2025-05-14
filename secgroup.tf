@@ -18,14 +18,10 @@ resource "huaweicloud_networking_secgroup_rule" "secgroup_ingress_rules" {
 }
 
 resource "huaweicloud_networking_secgroup_rule" "secgroup_rule_egress" {
-  direction          = "egress"
-  ethertype          = "IPv4"
-  protocol           = "tcp"
-  ports              = "1-65535"
-  remote_ip_prefix   = "0.0.0.0/0"
-  security_group_id  = huaweicloud_networking_secgroup.secgroup.id
-}
-
-output "secgroup_name" {
-  value = huaweicloud_networking_secgroup.secgroup.name
+  direction         = "egress"
+  ethertype         = "IPv4"
+  protocol          = "tcp"
+  ports             = "1-65535"
+  remote_ip_prefix  = "0.0.0.0/0"
+  security_group_id = huaweicloud_networking_secgroup.secgroup.id
 }
