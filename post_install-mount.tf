@@ -9,7 +9,7 @@ resource "null_resource" "post_install" {
   }
 
   provisioner "file" {
-    source      = "${path.module}/../userdata/scripts/auto-mount.sh"
+    source      = "${path.module}/userdata/scripts/auto-mount.sh"
     destination = "/tmp/auto-mount.sh"
   }
 
