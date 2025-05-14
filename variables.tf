@@ -33,7 +33,7 @@ variable "secgroup_name" {
 }
 
 variable "private_key_content" {
-  description = "SSH private key content (auto-generated if not given)"
+  description = "Content of the private key"
   type        = string
   default     = ""  # Optional bana diya
 }
