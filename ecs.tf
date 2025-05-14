@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    huaweicloud = {
-      source = "huaweicloud/huaweicloud"
-    }
-  }
-}
-
-
 resource "huaweicloud_compute_instance" "ecs" {
   name            = var.instance_name
   flavor_id       = var.flavor_id
