@@ -2,7 +2,7 @@ resource "huaweicloud_compute_instance" "ecs" {
   name            = var.instance_name
   flavor_id       = var.flavor_id
   image_id        = var.image_id
-  key_pair        = var.keypair_name
+  key_pair        = huaweicloud_compute_keypair.keypair.name
   security_groups = [var.secgroup_name]
 
   network {
