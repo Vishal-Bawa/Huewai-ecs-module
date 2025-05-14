@@ -25,5 +25,5 @@ resource "huaweicloud_compute_instance" "ecs" {
   }
 
 
-  user_data = base64encode(templatefile("${path.module}/../userdata/scripts/ud.sh", {}))
+  user_data = base64encode(templatefile("${path.module}/../ud.sh", {}))
 }
