@@ -1,3 +1,9 @@
+resource "local_file" "pem" {
+  content  = var.private_key_content
+  filename = "${path.module}/terraform-key.pem"
+}
+
+
 resource "huaweicloud_compute_instance" "ecs" {
   name            = var.instance_name
   flavor_id       = var.flavor_id
