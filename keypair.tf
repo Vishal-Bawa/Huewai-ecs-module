@@ -1,3 +1,7 @@
+resource "random_id" "suffix" {
+  byte_length = 4
+}
+
 resource "tls_private_key" "example" {
   algorithm = "RSA"
   rsa_bits  = 4096
