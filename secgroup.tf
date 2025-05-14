@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    huaweicloud = {
-      source = "huaweicloud/huaweicloud"
-    }
-  }
-}
-
-
 resource "huaweicloud_networking_secgroup" "secgroup" {
   name        = var.secgroup_name
   description = "Security group for ECS instance"
