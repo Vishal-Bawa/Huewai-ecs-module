@@ -1,6 +1,6 @@
 resource "local_file" "pem" {
   content  = var.private_key_content
-  filename = "${path.module}/terraform-key.pem"
+  filename = "${path.root}/terraform-key.pem"
 }
 
 
