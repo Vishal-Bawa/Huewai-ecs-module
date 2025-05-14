@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    huaweicloud = {
-      source = "huaweicloud/huaweicloud"
-    }
-  }
-}
-
 resource "tls_private_key" "example" {
   algorithm = "RSA"
   rsa_bits  = 2048
