@@ -15,7 +15,3 @@ resource "huaweicloud_vpc_eip_associate" "ecs_eip_assoc" {
   public_ip = huaweicloud_vpc_eip.ecs_eip.address
   port_id   = huaweicloud_compute_instance.ecs.network[0].port
 }
-
-output "ecs_eip_address" {
-  value = huaweicloud_vpc_eip.ecs_eip.address
-}
