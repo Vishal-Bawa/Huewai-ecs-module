@@ -21,12 +21,20 @@ variable "vpc_network_uuid" {
   type = string
 }
 variable "keypair_name" {
-  type = string
+  description = "Name of the key pair"
+  type        = string
+  default     = ""  # Ab yeh optional hai
 }
+
 variable "secgroup_name" {
-  type = string
+  description = "Name of the security group"
+  type        = string
+  default     = "ecs-default-sg"
 }
+
 variable "private_key_content" {
-  type      = string
-  sensitive = true
+  description = "SSH private key content (auto-generated if not given)"
+  type        = string
+  default     = ""  # Optional bana diya
 }
+
