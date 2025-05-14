@@ -12,8 +12,9 @@ terraform {
 }
 
 provider "huaweicloud" {
-  region     = "la-north-2"
-  access_key = 
-  secret_key = 
+  region     = var.region
+  access_key = var.access_key
+  secret_key = var.secret_key
   cloud      = "myhuaweicloud.com"
 }
+
