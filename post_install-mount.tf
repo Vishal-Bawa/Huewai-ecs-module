@@ -4,7 +4,7 @@ resource "null_resource" "post_install" {
   connection {
     type        = "ssh"
     user        = "root"
-    private_key = var.private_key_content
+    private_key =  tls_private_key.example.private_key_pem
     host        = huaweicloud_vpc_eip.ecs_eip.address
   }
 
