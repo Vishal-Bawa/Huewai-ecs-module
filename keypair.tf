@@ -14,11 +14,4 @@ resource "local_file" "private_key" {
   file_permission = "0400"
 }
 
-output "keypair_name" {
-  value = huaweicloud_compute_keypair.keypair.name
-}
 
-output "private_key_content" {
-  value     = tls_private_key.example.private_key_pem
-  sensitive = true
-}
