@@ -38,3 +38,8 @@ variable "private_key_content" {
   default     = ""  # Optional bana diya
 }
 
+variable "user_data_script_path" {
+  type        = string
+  description = "Path to the user-data script to run on instance startup"
+}
+
