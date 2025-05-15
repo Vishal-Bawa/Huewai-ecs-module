@@ -40,6 +40,6 @@ variable "private_key_content" {
 
 variable "user_data_script_path" {
   type        = string
-  description = "Path to the user-data script to run on instance startup"
+  description = "Path to the user-data script"
 }
 
