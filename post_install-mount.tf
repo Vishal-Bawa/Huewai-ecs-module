@@ -14,9 +14,11 @@ resource "null_resource" "post_install" {
   }
 
   provisioner "remote-exec" {
-    inline = [
-      "chmod +x /tmp/auto-mount.sh",
-      "sudo /tmp/auto-mount.sh"
+  inline = [
+    "echo 'Running auto-mount script...'",
+    "ls -l /tmp/auto-mount.sh || echo 'Script not found!'",
+    "chmod +x /tmp/auto-mount.sh || echo 'chmod failed!'",
+    "sudo /tmp/auto-mount.sh || echo 'script execution failed!'"
     ]
   }
 }
