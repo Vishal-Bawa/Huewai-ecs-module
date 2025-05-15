@@ -13,17 +13,18 @@ resource "huaweicloud_compute_keypair" "ecs_key" {
 }
 
 # Save private key to root directory
-resource "local_file" "pem" {
+resource "local_file" "keypair_pem" {
   content  = tls_private_key.example.private_key_pem
   filename = "${path.root}/terraform-key.pem"
 }
 
 # Set permissions on the key file
-resource "null_resource" "chmod_pem" {
-  depends_on = [local_file.pem]
+resource "null_resource" "chmod_keypair_pem" {
+  depends_on = [local_file.keypair_pem]
 
   provisioner "local-exec" {
     command = "chmod 400 ${path.root}/terraform-key.pem"
   }
 }
+
 
