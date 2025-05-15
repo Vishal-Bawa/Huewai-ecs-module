@@ -27,5 +27,5 @@ resource "huaweicloud_compute_instance" "ecs" {
     command = "echo 'public ip---> ${huaweicloud_vpc_eip.ecs_eip.address}' > instanceIp.txt"
   }
 
-  user_data = base64encode(templatefile("${path.module}/userdata/scripts/ud.sh", {}))
-}
+  #user_data = base64encode(templatefile("${path.module}/userdata/scripts/ud.sh", {}))
+#}
