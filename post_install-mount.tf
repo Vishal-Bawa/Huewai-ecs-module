@@ -5,7 +5,7 @@ resource "null_resource" "post_install" {
   type        = "ssh"
   user        = "root"
   host        = huaweicloud_vpc_eip.ecs_eip.address
-  private_key = file("${path.root}/terraform-key.pem")
+  private_key = tls_private_key.example.private_key_pem
 }
 
   provisioner "file" {
